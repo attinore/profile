@@ -1,3 +1,5 @@
 def circle_area(radius)
-  # TODO: Implement the `circle_area` method
+  return 3.14 * radius * radius
 end
+
+puts circle_area(1)
