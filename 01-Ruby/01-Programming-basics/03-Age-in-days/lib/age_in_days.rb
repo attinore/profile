@@ -8,5 +8,3 @@ def age_in_days(day, month, year)
   return (now - date_of_birth).to_i
   # TODO: return the age expressed in days given the day, month, and year of birth
 end
-
-puts age_in_days(5, 12, 1982)
