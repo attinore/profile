@@ -9,11 +9,11 @@ def coach_answer(your_message)
 end
 
 def coach_answer_enhanced(your_message)
-  if your_message == "I AM GOING TO WORK RIGHT NOW!"
-    return ""
-  elsif your_message == your_message.upcase
-    return "I can feel your motivation! #{coach_answer(your_message)}"
-  else
-    return coach_answer(your_message)
+  case your_message
+  when "I AM GOING TO WORK RIGHT NOW!"
+    ""
+  when your_message.upcase
+    "I can feel your motivation! #{coach_answer(your_message)}"
+  else coach_answer(your_message)
   end
 end
