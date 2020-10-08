@@ -8,9 +8,6 @@ def burger(patty, sauce, topping)
 end
 
 burger("steak", "ketchup", "onions")
-
 burger("steak", "ketchup", "onions") do |patty|
   "grilled #{patty}"
 end
-
-
