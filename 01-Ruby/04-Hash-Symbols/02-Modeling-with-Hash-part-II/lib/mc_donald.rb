@@ -23,10 +23,7 @@ def calories_counter(orders)
   total_calories = 0
   orders.each do |order|
     if MEALS.key?(order)
-      burger = MEALS[order][0]
-      side = MEALS[order][1]
-      beverage = MEALS[order][2]
-      total_calories += poor_calories_counter(burger, side, beverage)
+      total_calories += poor_calories_counter(MEALS[order][0], MEALS[order][1], MEALS[order][2])
     else
       total_calories += DISHES_CALORIES[order]
     end
