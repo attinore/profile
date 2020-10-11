@@ -1,13 +1,9 @@
 def array_to_hash(array)
   hash = {}
   array.each_with_index do |element, index|
-  key =
-  if  block_given?
-    yield(index)
-  else
-    index.to_s
-  end
-  hash[key] = element
+    key =
+      block_given? ? yield(index) : index.to_s
+    hash[key] = element
   end
   return hash
 end
