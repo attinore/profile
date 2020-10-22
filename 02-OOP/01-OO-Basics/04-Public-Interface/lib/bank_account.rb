@@ -11,6 +11,9 @@ class BankAccount
   # - you can withdraw or deposit money
   # - You can see the balance of the account (through the balance variable)
 
+
+  attr_reader :name, :balance
+
   MIN_DEPOSIT = 100
 
   def initialize(name, iban, initial_deposit, password)
@@ -25,14 +28,19 @@ class BankAccount
     add_transaction(initial_deposit)
   end
 
+
   def withdraw(amount)
     # TODO: Call add_transaction with the right argument
+    @balance -= amount
     # TODO: returns a string with a message
+    "#{amount} was withdrawed from your account. Your balance is #{balance}."
   end
 
   def deposit(amount)
     # TODO: Call add_transaction with the right argument
+    @balance += amount
     # TODO: returns a string with a message
+    "#{amount} was deposited to your account. Your balance is #{balance}."
   end
 
   def transactions_history(args = {})
@@ -42,6 +50,8 @@ class BankAccount
 
   def iban
     # TODO: Hide the middle of the IBAN like FR14**************606 and return it
+    number = "FR14-2004-1010-0505-0001-3M02-606"
+    number.gsub(/(?=....).(?=...)/, '*')
   end
 
   def to_s
@@ -53,6 +63,8 @@ class BankAccount
 
   def add_transaction(amount)
     # TODO: add the amount in the transactions array
+    @transactions << amount
     # TODO: update the current balance (which represents the balance of the account)
+    @balance += amount
   end
 end
