@@ -28,7 +28,6 @@ class BankAccount
     add_transaction(initial_deposit)
   end
 
-
   def withdraw(amount)
     # TODO: Call add_transaction with the right argument
     @balance -= amount
@@ -44,19 +43,27 @@ class BankAccount
   end
 
   def transactions_history(args = {})
+    password = args[:password]
+    if password.nil?
+      "enter your password"
+    elsif password != @password
+      "incorrect password"
+    else
+      @transactions.join(',')
+    end
     # TODO: Check if there is a password and if so if it is correct
     # TODO: return a string displaying the transactions, BUT NOT return the transaction array!
   end
 
   def iban
     # TODO: Hide the middle of the IBAN like FR14**************606 and return it
-    number = "FR14-2004-1010-0505-0001-3M02-606"
-    number.gsub(/(?=....).(?=...)/, '*')
+    iban = @iban.split("-")
+    "#{iban[0]}********************#{iban[6]}"
   end
 
   def to_s
     # Method used when printing account object as string (also used for string interpolation)
-    # TODO: return a string with the account owner, the hidden iban and the balance of the account
+    "Owner: #{name} - IBAN: #{iban} - Balance: #{balance}"
   end
 
   private
