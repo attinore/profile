@@ -45,12 +45,13 @@ class BankAccount
   def transactions_history(args = {})
     password = args[:password]
     if password.nil?
-      "enter your password"
+      "no password given"
     elsif password != @password
-      "incorrect password"
+      "wrong password"
     else
       @transactions.join(',')
     end
+
     # TODO: Check if there is a password and if so if it is correct
     # TODO: return a string displaying the transactions, BUT NOT return the transaction array!
   end
