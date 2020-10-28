@@ -1,35 +1,36 @@
 require 'csv'
-
-csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath    = 'lib/recipes.csv'
-
-CSV.foreach(filepath, csv_options) do |row|
-  puts "#{row['Name']}, a #{row['Description']}"
-end
-
-# Save
-csv_options = { col_sep: ',', force_quotes: true, quote_char: '"' }
-filepath    = 'lib/recipes.csv'
-
-CSV.open(filepath, 'wb', csv_options) do |csv|
-end
+require_relative 'recipe'
 
 class Cookbook
-  def initialize
+  def initialize(csv_file_path)
     @recipes = []
+    CSV.foreach(csv_file_path) do |row|
+      @recipes << Recipe.new(row[0], row[1])
+    end
   end
   # all which returns all the recipes
+
   def all
-    return @recipes
+    @recipes
   end
 
-  # add_recipe(recipe) which adds a new recipe to the cookbook
   def add_recipe(recipe)
-    return @recipes << recipe
+    @recipes << recipe
+    save_to_csv
   end
 
-  # remove_recipe(recipe_index) which removes a recipe from the cookbook.
   def remove_recipe(recipe_index)
-    return @recipes.delete_at(recipe_index)
+    @recipes.delete_at(recipe_index)
+    save_to_csv
+  end
+
+
+  private
+
+  def save_to_csv
+    csv_file_path = "lib/recipe.csv"
+    CSV.open(csv_file_path, 'w') do |csv|
+      csv << [@recipes[0].to_s, @recipes[1].to_s]
+    end
   end
 end
