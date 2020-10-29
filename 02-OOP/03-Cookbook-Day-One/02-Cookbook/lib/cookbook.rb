@@ -3,6 +3,7 @@ require_relative 'recipe'
 
 class Cookbook
   def initialize(csv_file_path)
+    @csv_file_path = csv_file_path
     @recipes = []
     CSV.foreach(csv_file_path) do |row|
       @recipes << Recipe.new(row[0], row[1])
@@ -28,9 +29,12 @@ class Cookbook
   private
 
   def save_to_csv
-    csv_file_path = "lib/recipe.csv"
-    CSV.open(csv_file_path, 'w') do |csv|
-      csv << [@recipes[0].to_s, @recipes[1].to_s]
+    CSV.open(@csv_file_path, 'wb') do |csv|
+      @recipes.each do |recipe|
+        csv << [recipe.name, recipe.description]
+      end
     end
   end
 end
+
+

@@ -1,7 +1,7 @@
 class View
-  def display(recipes)
-    recipes.each do |name|
-      puts "/.*(#{name}.*/"
+  def display(name, description)
+    @recipes.each do |name, description|
+    puts "#{name}, #{description}"
     end
   end
 end
