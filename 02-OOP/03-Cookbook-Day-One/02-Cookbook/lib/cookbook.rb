@@ -1,6 +1,7 @@
 require 'csv'
 require_relative 'recipe'
 
+
 class Cookbook
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
@@ -9,7 +10,6 @@ class Cookbook
       @recipes << Recipe.new(row[0], row[1])
     end
   end
-  # all which returns all the recipes
 
   def all
     @recipes
