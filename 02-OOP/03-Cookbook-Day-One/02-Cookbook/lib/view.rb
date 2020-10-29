@@ -1,7 +1,11 @@
+require_relative 'cookbook'
+require_relative 'recipe'
+
 class View
-  def display(name, description)
-    @recipes.each do |name, description|
-    puts "#{name}, #{description}"
+  def display(recipes)
+    @recipes = recipes
+    @recipes.each do |recipe|
+      puts "#{recipe.name}, #{recipe.description}"
     end
   end
 end

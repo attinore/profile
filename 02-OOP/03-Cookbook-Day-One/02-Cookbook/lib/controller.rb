@@ -1,10 +1,11 @@
 require_relative 'view'
 require_relative 'cookbook'
+require_relative 'recipe'
 
 
 class Controller
   def initilaize(cookbook)
-    @cookbook = Cookbook.new(csv_file)
+    @cookbook = Cookbook.new
   end
 
   def list
@@ -13,10 +14,11 @@ class Controller
   end
 
   def create
+    recipe = Recipe.new(name, description)
     @cookbook.add_recipe(recipe)
   end
 
   def destroy
-    @cookbook.remove_recipe(recipe_index)
+    @cookbook.remove_recipe
   end
 end
