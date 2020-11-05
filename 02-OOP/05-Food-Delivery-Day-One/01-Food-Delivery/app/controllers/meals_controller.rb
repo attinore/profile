@@ -9,7 +9,7 @@ class MealsController
 
   def add
     name = @meal_view.ask_action("name")
-    price = @meal_view.ask_action(price)
+    price = @meal_view.ask_action("price")
     meal = Meal.new(name: name, price: price.to_i)
     @meal_repository.create(meal)
   end

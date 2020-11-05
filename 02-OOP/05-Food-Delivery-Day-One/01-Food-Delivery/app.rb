@@ -1,8 +1,8 @@
 # TODO: require relevant files to bootstrap the app.
 # Then you can test your program with:
 #   ruby app.rb
-require_relative "../app/repositories/meal_repository"
-require_relative "../app/controller/meals_controller"
+require_relative "../01-Food-Delivery/app/repositories/meal_repository"
+require_relative "../01-Food-Delivery/app/controllers/meals_controller"
 require_relative "router"
 
 CSV_FILE = File.join(File.dirname(__FILE__), "meals.csv")
