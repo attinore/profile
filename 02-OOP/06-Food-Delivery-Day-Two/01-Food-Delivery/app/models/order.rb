@@ -7,14 +7,14 @@ class Order
     @meal = attributes[:meal]
     @customer = attributes[:customer]
     @employee = attributes[:employee]
-    @delivered = attributes[:delivered] || false
+    @delivered = attributes[:delivered] || false #if you are not passing any variable, then gives "false"
   end
 
-  def delivered?
-    @delivered
+  def delivered? #= attr_accessor
+    @delivered # just giving a status
   end
 
-  def deliver!
-    @delivered = true
+  def deliver! #= attr_accessor
+    @delivered = true #overwrite anything
   end
 end
