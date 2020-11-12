@@ -27,9 +27,9 @@ def love_tracks(db)
   return results.flatten
 end
 
-def long_tracks(db, min_length)
+def long_tracks(db, min)
   # TODO: return an array of tracks' names verifying:
   # duration > min_length (minutes) sorted by length (ascending)
-  results = db.execute("SELECT name FROM tracks t WHERE milliseconds > #{min_length * 60_000} ORDER BY t.milliseconds ASC")
+  results = db.execute("SELECT name FROM tracks t WHERE milliseconds > #{min * 60_000} ORDER BY t.milliseconds ASC")
   return results.flatten
 end
