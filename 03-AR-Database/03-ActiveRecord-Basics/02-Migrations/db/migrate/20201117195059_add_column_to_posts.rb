@@ -5,3 +5,5 @@ class AddColumnToPosts < ActiveRecord::Migration[6.0]
 end
 
 # comment
+
+# comment
