@@ -3,3 +3,5 @@ class AddColumnToPosts < ActiveRecord::Migration[6.0]
     add_column :posts, :votes, :integer, default: 0
   end
 end
+
+# comment
