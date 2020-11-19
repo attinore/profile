@@ -1,5 +1,5 @@
 class MediaType < ActiveRecord::Base
   has_many :tracks
 
-  # validates :name
+  validates :name, presence: true
 end

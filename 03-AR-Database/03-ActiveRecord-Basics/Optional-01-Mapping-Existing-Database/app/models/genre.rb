@@ -1,5 +1,8 @@
 class Genre < ActiveRecord::Base
   has_many :tracks
+  validates :name, presence: true
 
-  # validates :name
+  def albums
+    name.genre
+  end
 end

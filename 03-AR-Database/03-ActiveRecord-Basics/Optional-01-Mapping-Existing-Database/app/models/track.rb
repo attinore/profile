@@ -3,7 +3,7 @@ class Track < ActiveRecord::Base
   belongs_to :genre
   belongs_to :media_type
 
-  # validates :name, :composer, :milliseconds, :bytes, :unit_price
+  validates :name, :composer, :milliseconds, :bytes, :unit_price, presence: true
 end
 
 
