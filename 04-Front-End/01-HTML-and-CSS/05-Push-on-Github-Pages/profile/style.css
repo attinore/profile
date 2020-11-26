@@ -1,0 +1,112 @@
+@import url('https://use.fontawesome.com/releases/v5.0.10/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Quicksand:wght@300;500&display=swap');
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color:#27173e;
+  line-height: 48px;
+}
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  color:#27173e;
+  line-height: 48px;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: rgba(230,230,250,0.4);
+  color: #5d546b;
+  line-height: 24px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color:#af96da;
+}
+
+a:hover {
+  background-color: #27173e;
+}
+
+p {
+  margin-bottom: 40px;
+}
+
+img {
+  width:100px;
+  border-radius: 50%;
+}
+
+.container {
+  width: 750px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  padding: 24px 48px 48px 48px;
+  margin: 24px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0.5px 30px rgba(0,0,0,0.1);
+}
+
+.footer-thin {
+  background-color: white;
+  padding: 12px;
+  margin: 24px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 56px;
+  box-shadow: 0 0.5px 30px rgba(0,0,0,0.1);
+}
+
+.btn-lightpurple {
+  background-color: #af96da;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.list-inline li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.list-inline {
+  list-line: none;
+  padding: 0px;
+}
+
+.social-icon {
+  font-size:40px;
+  margin: -8px;
+}
+
+.social-icon:hover {
+  background-color: white;
+  color: #27173e;
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  .container {
+    width: 300px;
+  }
+}
