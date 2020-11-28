@@ -1,1 +1,49 @@
 /* Your card CSS file */
+.card-category {
+  margin: 24px;
+  background-position: center;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  color: white;
+  height: 180px;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 5 15px rgba(0,0,0,0.1);
+  height: 250px;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+.card-product {
+  display: flex;
+  margin: 24px;
+  background: white;
+  align-items: center;
+}
+
+.card-product h2 {
+  margin-top: 16px;
+}
+
+.card-product p {
+  margin-top: 16px;
+}
+
+.card-product img {
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  margin-right: 16px;
+}
+
+.card-trip {
+
+}
+
+.card-avatar {
+
+}
+
+.card-trip-footer {
+
+}
